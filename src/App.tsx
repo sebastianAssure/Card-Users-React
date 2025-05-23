@@ -1,13 +1,10 @@
 import "./App.css";
-import UserList from "./components/UserList";
+import Counter from "./components/Counter";
 
 function App() {
-  const sayHello = (name: string, age: number) => {
-    alert("Name: " + name + " Edad: " + age);
-  };
 
   return (
-    <UserList />
+    <Counter />
   );
 }
 export default App;
