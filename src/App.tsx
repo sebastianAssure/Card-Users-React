@@ -1,67 +1,44 @@
 import "./App.css";
-import ProfileCard from "./components/ProfileCard";
-import type { User } from "./interfaces/User";
-
-const users: User[] = [
-  {
-    id: 1,
-    name: "Luna Vega",
-    role: "Frontend Developer",
-    avatar: "https://i.pravatar.cc/150?img=32",
-    location: "New York, USA",
-    isFavorite: true,
-  },
-  {
-    id: 2,
-    name: "Kai Chen",
-    role: "UI/UX Designer",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    location: "Toronto, Canada",
-    isFavorite: false,
-  },
-  {
-    id: 3,
-    name: "Sofia Ramos",
-    role: "Full Stack Developer",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    location: "Barcelona, Spain",
-    isFavorite: true,
-  },
-  {
-    id: 4,
-    name: "Ethan Wright",
-    role: "Backend Engineer",
-    avatar: "https://i.pravatar.cc/150?img=58",
-    location: "Austin, USA",
-    isFavorite: false,
-  },
-  {
-    id: 5,
-    name: "Maya Patel",
-    role: "Product Manager",
-    avatar: "https://i.pravatar.cc/150?img=25",
-    location: "London, UK",
-    isFavorite: true,
-  },
-];
+import { UserCard } from "./components/UserCard";
 
 function App() {
+  const sayHello = (name: string, age: number) => {
+    alert("Name: " + name + " Edad: " + age);
+  };
+
   return (
-    <main className="min-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-20 gap-20">
-        {users.map((user) => (
-          <ProfileCard
-            key={user.id}
-            avatar={user.avatar}
-            isFavorite={user.isFavorite}
-            location={user.location}
-            name={user.name}
-            role={user.role}
-            id={user.id}
-          ></ProfileCard>
-        ))}
-      </div>
-    </main>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-cyan-950 p-20 gap-10 min-h-screen">
+      <UserCard
+        name="Luna Vega"
+        age={25}
+        onClick={() => sayHello("Luna Vega", 25)}
+      />
+      <UserCard
+        name="Brendan Patel"
+        age={30}
+        onClick={() => sayHello("Brendan Patel", 30)}
+      />
+      <UserCard
+        name="Kai Chen"
+        age={24}
+        onClick={() => sayHello("Kai Chen", 24)}
+      />
+      <UserCard
+        name="Pedro Lopez"
+        age={35}
+        onClick={() => sayHello("Pedro Lopez", 35)}
+      />
+      <UserCard
+        name="Maya Patel"
+        age={25}
+        onClick={() => sayHello("Maya Patel", 25)}
+      />
+      <UserCard
+        name="Ethan Wright"
+        age={22}
+        onClick={() => sayHello("Ethan Wright", 22)}
+      />
+    </div>
   );
 }
 export default App;

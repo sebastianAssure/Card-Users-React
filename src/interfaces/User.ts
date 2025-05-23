@@ -6,3 +6,9 @@ export type User = {
   location: string;
   isFavorite: boolean;
 };
+
+export type UserProps = {
+  name: string;
+  age: number;
+  onClick: () => void;
+}
