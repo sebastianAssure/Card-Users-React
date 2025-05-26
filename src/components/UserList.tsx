@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const UserList = () => {
   const [users, setUsers] = useState<any>();
