@@ -11,10 +11,12 @@ function App() {
   const handleFinalSubmit = () => {
   const formData = JSON.parse(localStorage.getItem("data") || "{}");
   console.log("Submitted data:", formData);
-  // Aquí puedes hacer una petición POST o mostrar un mensaje de éxito
+
   alert("Form submitted successfully!");
-  localStorage.removeItem("formData");
-  setStep(1); // Volver al inicio si lo deseas
+  localStorage.removeItem("formDataStep1");
+  localStorage.removeItem("formDataStep2");
+  localStorage.removeItem("formDataStep3");
+  setStep(1);
 };
 
   

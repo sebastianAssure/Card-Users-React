@@ -59,9 +59,7 @@ export const Form3 = ({ onNext, onBack }: Form2Props) => {
               <input
                 type="radio"
                 value="email"
-                {...register("contactMethod", {
-                  required: "Select a contact method",
-                })}
+                {...register("contactMethod")}
               />{" "}
               Email
             </label>
@@ -69,9 +67,7 @@ export const Form3 = ({ onNext, onBack }: Form2Props) => {
               <input
                 type="radio"
                 value="phone"
-                {...register("contactMethod", {
-                  required: "Select a contact method",
-                })}
+                {...register("contactMethod")}
               />{" "}
               Phone
             </label>
@@ -79,9 +75,7 @@ export const Form3 = ({ onNext, onBack }: Form2Props) => {
               <input
                 type="radio"
                 value="whatsapp"
-                {...register("contactMethod", {
-                  required: "Select a contact method",
-                })}
+                {...register("contactMethod")}
               />{" "}
               WhatsApp
             </label>
@@ -95,7 +89,7 @@ export const Form3 = ({ onNext, onBack }: Form2Props) => {
 
         <div>
           <label className="flex items-center gap-2 font-medium">
-            <input type="checkbox" {...register("subscribe")} /> Subscribe to
+            <input type="checkbox" {...register("subscribe")}/> Subscribe to
             Newsletter?
           </label>
         </div>
