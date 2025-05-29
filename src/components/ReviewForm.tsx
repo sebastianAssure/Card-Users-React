@@ -13,7 +13,7 @@ export const ReviewForm = ({ onBack, onSubmit }: ReviewFormProps) => {
 
   return (
     <div className="flex flex-col gap-4 p-8 rounded-md w-full max-w-md shadow-md bg-white mt-6">
-      <h2 className="text-2xl text-blue-600 font-bold">Review Your Information</h2>
+      <h2 className="text-2xl text-blue-600 text-center font-bold">Review Your Information</h2>
       <div className="text-gray-700">
         <p><strong>Name:</strong> {formData.name}</p>
         <p><strong>Age:</strong> {formData.age}</p>

@@ -5,7 +5,7 @@ export const Header = ({ step }: HeaderProps) => {
     <header className="flex w-200 justify-around mt-8 mb-4">
       <div
         className={`${
-          step === 1 ? "bg-blue-500" : "bg-gray-500"
+          step === 1 ? "bg-blue-500 text-white" : "bg-gray-300"
         } rounded-full p-4 md:p-8 transition-colors duration-300`}
       >
         #1
@@ -13,7 +13,7 @@ export const Header = ({ step }: HeaderProps) => {
 
       <div
         className={`${
-          step === 2 ? "bg-blue-500" : "bg-gray-500"
+          step === 2 ? "bg-blue-500 text-white" : "bg-gray-300"
         } rounded-full p-4 md:p-8 transition-colors duration-300`}
       >
         #2
@@ -21,7 +21,7 @@ export const Header = ({ step }: HeaderProps) => {
 
       <div
         className={`${
-          step === 3 ? "bg-blue-500" : "bg-gray-500"
+          step === 3 ? "bg-blue-500 text-white" : "bg-gray-300"
         } rounded-full p-4 md:p-8 transition-colors duration-300`}
       >
         #3
@@ -29,7 +29,7 @@ export const Header = ({ step }: HeaderProps) => {
 
       <div
         className={`${
-          step === 4 ? "bg-blue-500" : "bg-gray-500"
+          step === 4 ? "bg-blue-500 text-white" : "bg-gray-300"
         } rounded-full p-4 md:p-8 transition-colors duration-300`}
       >
         #4
