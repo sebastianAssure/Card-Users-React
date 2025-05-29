@@ -1,66 +1,30 @@
-import "./App.css";
-import ProfileCard from "./components/ProfileCard";
-import type { User } from "./interfaces/User";
-
-const users: User[] = [
-  {
-    id: 1,
-    name: "Luna Vega",
-    role: "Frontend Developer",
-    avatar: "https://i.pravatar.cc/150?img=32",
-    location: "New York, USA",
-    isFavorite: true,
-  },
-  {
-    id: 2,
-    name: "Kai Chen",
-    role: "UI/UX Designer",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    location: "Toronto, Canada",
-    isFavorite: false,
-  },
-  {
-    id: 3,
-    name: "Sofia Ramos",
-    role: "Full Stack Developer",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    location: "Barcelona, Spain",
-    isFavorite: true,
-  },
-  {
-    id: 4,
-    name: "Ethan Wright",
-    role: "Backend Engineer",
-    avatar: "https://i.pravatar.cc/150?img=58",
-    location: "Austin, USA",
-    isFavorite: false,
-  },
-  {
-    id: 5,
-    name: "Maya Patel",
-    role: "Product Manager",
-    avatar: "https://i.pravatar.cc/150?img=25",
-    location: "London, UK",
-    isFavorite: true,
-  },
-];
+import { useState } from "react";
+import { Form1 } from "./components/Form1";
+import { Header } from "./components/Header";
+import { Form2 } from "./components/Form2";
+import { Form3 } from "./components/Form3";
+import { ReviewForm } from "./components/ReviewForm";
 
 function App() {
+  const [step, setStep] = useState(1);
+
+  const handleFinalSubmit = () => {
+  const formData = JSON.parse(localStorage.getItem("data") || "{}");
+  console.log("Submitted data:", formData);
+  // Aquí puedes hacer una petición POST o mostrar un mensaje de éxito
+  alert("Form submitted successfully!");
+  localStorage.removeItem("formData");
+  setStep(1); // Volver al inicio si lo deseas
+};
+
+  
   return (
-    <main className="min-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-20 gap-20">
-        {users.map((user) => (
-          <ProfileCard
-            key={user.id}
-            avatar={user.avatar}
-            isFavorite={user.isFavorite}
-            location={user.location}
-            name={user.name}
-            role={user.role}
-            id={user.id}
-          ></ProfileCard>
-        ))}
-      </div>
+    <main className="flex flex-col justify-center items-center h-screen">
+      <Header step={step}/>
+      {step === 1 && <Form1 onNext={() => setStep(2)} />}
+      {step === 2 && <Form2 onNext={() => setStep(3)} onBack={() => setStep(1)} />}
+      {step === 3 && <Form3 onNext={() => setStep(4)} onBack={() => setStep(2)} />}
+      {step === 4 && <ReviewForm onBack={() => setStep(3)} onSubmit={handleFinalSubmit} />}
     </main>
   );
 }
