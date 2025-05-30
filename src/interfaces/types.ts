@@ -45,3 +45,9 @@ export type SocialMedia = {
   url: string;
 }
 
+export type RatingFormValues = {
+  name: string;
+  rating: number;
+  feedback: string;
+}
+
