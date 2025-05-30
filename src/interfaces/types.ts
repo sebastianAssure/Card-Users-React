@@ -40,3 +40,8 @@ export type Form3Data = {
   subscribe: boolean; // obligatorio y NO undefined
 }
 
+export type SocialMedia = {
+  platform: string;
+  url: string;
+}
+
